@@ -1,7 +1,11 @@
+
+//creating emitter server instance
 const app = require('express')();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
 
+
+//other require package for encryption and hashing
 const path = require('path');
 const encryptData = require('./encryption.js');
 const hashData = require('./hash.js');
@@ -11,7 +15,7 @@ const data = require('./data.json');
 
 
 
-
+//sent encrypted stream of data every 10 sec once client is connected to socket.io
 io.on('connection', (socket)=>{
     console.log(`${socket.id} is connected`);
 
@@ -26,6 +30,9 @@ io.on('connection', (socket)=>{
 })
 
 
+
+
+//socket server listening to port 3000
 io.listen(3000, () => {
     console.log('server running at http://localhost:3000');
   });
@@ -33,6 +40,7 @@ io.listen(3000, () => {
 
 
 
+//socket.emit send encrypted stream of data to socket client 
 function sendDataToClient(socket){
     socket.emit('message', generateData())
 }
@@ -40,6 +48,7 @@ function sendDataToClient(socket){
 
 
 
+//function to generate and encode given data
 function generateData() {
 
     const totalName = data.names.length;

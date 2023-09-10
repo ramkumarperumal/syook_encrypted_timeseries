@@ -17,8 +17,8 @@ const encryptionIV = crypto
 
 
 
-
-  function decryptData(encryptedData) {
+//decryption of encrypted data
+function decryptData(encryptedData) {
     const buff = Buffer.from(encryptedData, 'base64')
     const decipher = crypto.createDecipheriv(encryptionMethod, key, encryptionIV)
     return (decipher.update(buff.toString('utf8'), 'hex', 'utf8') +

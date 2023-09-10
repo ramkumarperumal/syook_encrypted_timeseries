@@ -3,6 +3,8 @@ import {useState} from 'react'
 
 import './App.css';
 
+
+//connect to socket.io server2
 const socket = io.connect('http://localhost:5000')
 
 function App() {
