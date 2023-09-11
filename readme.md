@@ -82,5 +82,5 @@ host the server
   npm start
 ```
 
-
+If hosted emitting_server is not connected, change io.connect link to //http://localhost:3000 in backend/listening_server/server2.js and run backend/emitting_server/server1.js locally
 

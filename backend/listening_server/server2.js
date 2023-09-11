@@ -37,7 +37,7 @@ ioServer.on('connection', (socketClient)=>{
 
 
 //socket.io client connecting to server1
-const socket = io.connect("https://syook-emitter.onrender.com", { //http://localhost:3000
+const socket = io.connect("https://syook-emitter.onrender.com", { //http://localhost:3000 
     reconnection: true
 });
 
